@@ -1,9 +1,6 @@
 FROM node:latest
-
-COPY package-lock.json .
-COPY package.json .
+WORKDIR /app
+COPY package*.json ./
 RUN npm install
-ENV NODE_ENV production
-
-CMD node src/index.js
-USER node
+COPY . .
+CMD npm run start

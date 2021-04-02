@@ -102,3 +102,6 @@ tags
 #######
 *.pyc
 __pycache__/
+
+# docker #
+docker-compose.override.yml
