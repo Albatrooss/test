@@ -31,14 +31,15 @@ app.use((req, res, next) => {
 })
 
 app.use(express.json());
+app.get('/', (req, res) => {
+    res.send('<h1>OHOHOHOH</h1>');
+})
 app.use('/api/todos', todoRoutes);
 
 app.use((req, res, next) => {
     const error =  new Error('Not found');
 
-    res.status(404).json({
-        message: error.message
-    })
+    res.status(404).send('<h1>404 Not found</h1>');
 })
 
 const httpServer = http.createServer(app);
